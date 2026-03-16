@@ -1,15 +1,11 @@
-import os
-
 import pyodbc
 
 class DBConnector:
 
     def __init__(self):
-        driver = os.getenv("DB_DRIVER", "ODBC Driver 17 for SQL Server")
-
         self.conn = pyodbc.connect(
-            f"DRIVER={{{driver}}};"
-            "SERVER=localhost;"
+            "DRIVER={ODBC Driver 17 for SQL Server};"
+            "SERVER=localhost\\SQLEXPRESS;"
             "DATABASE=InventorySystem;"
             "Trusted_Connection=yes;"
         )
