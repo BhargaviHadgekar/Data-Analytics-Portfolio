@@ -27,8 +27,8 @@ jobs:
       - name: Run tests
         run: |
           # Run unit tests if test file exists
-          if [ -f "./Student Database System/test_student_grade.py" ]; then \
-            python -m unittest discover -s "Student Database System" -p "test_student_grade.py"; \
+          if [ -f "./Student_Database_System/test_student_grade.py" ]; then \
+            python -m unittest discover -s "./Student_Database_System" -p "test_student_grade.py"; \
           else \
             echo "No test file found"; \
           fi
