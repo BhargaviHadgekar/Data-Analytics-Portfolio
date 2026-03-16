@@ -1,0 +1,101 @@
+name,category,quantity,purchase_price,selling_price,supplier
+Product_1,Furniture,52,3438,4976,Godrej
+Product_2,Accessories,59,1611,1930,Logitech
+Product_3,Furniture,14,1849,2596,IKEA
+Product_4,Accessories,58,1445,1652,Kingston
+Product_5,Furniture,10,3909,4856,IKEA
+Product_6,Electronics,17,1148,4416,Samsung
+Product_7,Furniture,73,988,2560,IKEA
+Product_8,Electronics,29,1213,2187,Samsung
+Product_9,Accessories,57,1946,2444,Corsair
+Product_10,Accessories,47,486,900,Kingston
+Product_11,Accessories,46,731,800,SanDisk
+Product_12,Furniture,57,4813,6397,Urban Ladder
+Product_13,Furniture,98,3570,4715,Godrej
+Product_14,Accessories,33,1423,1784,Kingston
+Product_15,Accessories,29,1537,1609,Corsair
+Product_16,Accessories,98,391,765,Logitech
+Product_17,Furniture,87,2503,3849,Urban Ladder
+Product_18,Accessories,94,944,1194,SanDisk
+Product_19,Furniture,89,1172,2318,IKEA
+Product_20,Furniture,71,3066,4636,Urban Ladder
+Product_21,Electronics,35,2752,6122,Lenovo
+Product_22,Accessories,39,911,1299,SanDisk
+Product_23,Accessories,50,1162,1321,SanDisk
+Product_24,Electronics,66,9340,12864,HP
+Product_25,Furniture,52,4147,6036,Nilkamal
+Product_26,Accessories,54,997,1322,Logitech
+Product_27,Furniture,56,3864,5593,Nilkamal
+Product_28,Accessories,86,1745,2014,Kingston
+Product_29,Accessories,100,221,328,Logitech
+Product_30,Accessories,98,1592,1826,Kingston
+Product_31,Furniture,79,1635,2234,Urban Ladder
+Product_32,Accessories,86,290,614,Kingston
+Product_33,Furniture,71,4183,5622,Urban Ladder
+Product_34,Furniture,34,983,1449,Urban Ladder
+Product_35,Accessories,34,1784,1844,Corsair
+Product_36,Accessories,21,1311,1577,SanDisk
+Product_37,Furniture,78,3911,5152,Nilkamal
+Product_38,Furniture,72,1133,2251,Godrej
+Product_39,Furniture,27,4420,5171,Nilkamal
+Product_40,Electronics,62,9148,13771,Lenovo
+Product_41,Electronics,62,8502,13243,HP
+Product_42,Furniture,27,4748,6160,Urban Ladder
+Product_43,Furniture,95,509,2480,Urban Ladder
+Product_44,Electronics,56,3209,7840,HP
+Product_45,Furniture,16,2353,4347,Godrej
+Product_46,Electronics,93,2215,4468,Lenovo
+Product_47,Electronics,33,2328,4108,HP
+Product_48,Electronics,17,6067,8986,Dell
+Product_49,Electronics,99,4166,7119,HP
+Product_50,Electronics,98,8737,11668,Samsung
+Product_51,Electronics,63,6486,9180,Dell
+Product_52,Accessories,91,471,925,Logitech
+Product_53,Electronics,39,4841,5664,Lenovo
+Product_54,Furniture,23,974,1827,Godrej
+Product_55,Furniture,37,555,2001,Nilkamal
+Product_56,Furniture,64,580,2321,IKEA
+Product_57,Accessories,90,1578,2057,Logitech
+Product_58,Furniture,81,2532,3338,Urban Ladder
+Product_59,Accessories,99,1807,1944,Kingston
+Product_60,Furniture,92,3013,3216,Nilkamal
+Product_61,Electronics,19,6852,9935,Lenovo
+Product_62,Accessories,55,203,517,Logitech
+Product_63,Furniture,33,4794,5162,Godrej
+Product_64,Furniture,92,1240,1693,Godrej
+Product_65,Furniture,46,4427,4791,IKEA
+Product_66,Furniture,78,4115,5161,IKEA
+Product_67,Accessories,32,538,806,Logitech
+Product_68,Electronics,100,1908,2481,Samsung
+Product_69,Accessories,32,1999,2446,Kingston
+Product_70,Furniture,37,2401,3345,IKEA
+Product_71,Accessories,98,1450,1520,Logitech
+Product_72,Accessories,42,1347,1465,Corsair
+Product_73,Furniture,13,3119,3941,Urban Ladder
+Product_74,Accessories,63,822,1128,Kingston
+Product_75,Accessories,25,1949,2125,Logitech
+Product_76,Electronics,71,7464,7944,Lenovo
+Product_77,Furniture,69,4593,6233,IKEA
+Product_78,Electronics,18,3482,5843,Lenovo
+Product_79,Accessories,23,347,459,SanDisk
+Product_80,Furniture,75,3376,4496,Nilkamal
+Product_81,Accessories,22,526,995,Logitech
+Product_82,Furniture,67,2402,2854,Godrej
+Product_83,Furniture,92,2355,3188,Urban Ladder
+Product_84,Accessories,12,1796,2142,SanDisk
+Product_85,Furniture,19,4326,5958,Nilkamal
+Product_86,Electronics,57,1207,5797,Dell
+Product_87,Furniture,55,4931,5493,Godrej
+Product_88,Electronics,32,7572,12277,HP
+Product_89,Furniture,27,1599,1835,Nilkamal
+Product_90,Furniture,71,773,1618,IKEA
+Product_91,Accessories,36,1285,1444,Corsair
+Product_92,Electronics,93,5340,8848,HP
+Product_93,Furniture,77,2946,4363,Urban Ladder
+Product_94,Accessories,50,497,812,Corsair
+Product_95,Electronics,62,5176,9501,Samsung
+Product_96,Accessories,31,199,338,Corsair
+Product_97,Electronics,45,5547,6977,HP
+Product_98,Furniture,47,1749,2884,Urban Ladder
+Product_99,Accessories,28,718,791,SanDisk
+Product_100,Accessories,25,1147,1281,Kingston
