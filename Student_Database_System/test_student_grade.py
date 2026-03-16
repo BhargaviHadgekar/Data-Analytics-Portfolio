@@ -1,9 +1,13 @@
 import unittest
-from connector import DBConnector
+from unittest.mock import patch, MagicMock
+from Student_Database_System.connector import DBConnector
 
 class TestStudentGrade(unittest.TestCase):
 
-    def setUp(self):
+    @patch('Student_Database_System.connector.pyodbc.connect')
+    def setUp(self, mock_connect):
+        # Mock the connection
+        mock_connect.return_value = MagicMock()
         self.db = DBConnector()
 
     def test_normalize_course(self):
