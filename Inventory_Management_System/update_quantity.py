@@ -24,4 +24,8 @@ class UpdateQuantity:
 
         self.db.update_quantity_db(pid, qty)
 
+        print(f"\nUpdated Quantity ")
+        print(tabulate([self.db.get_product_by_id(pid)],
+        headers=["ID","Name","Category","Qty","Purchase","Selling","Supplier"], tablefmt="grid"))
+
         print("✅ Quantity Updated")

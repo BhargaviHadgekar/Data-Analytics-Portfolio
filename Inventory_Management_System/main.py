@@ -48,7 +48,8 @@ while True:
 
     elif ch=="6":
         data=sales.view_sales()
-        print(tabulate(data))
+        print(tabulate(data, headers=["Sale ID","Product Name","Quantity Sold","Sale Date"], tablefmt="grid"      ))
+        print("✅ Sales data retrieved")
 
     elif ch=="7":
         break

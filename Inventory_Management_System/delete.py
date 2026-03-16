@@ -1,3 +1,5 @@
+from tabulate import tabulate
+
 from connector import DBConnector
 
 class DeleteProduct:
@@ -26,12 +28,8 @@ class DeleteProduct:
                WHERE P.id = ?"""
         self.db.execute_query(query, (pid,))
 
-        print(f"\nProduct details:{pid}({data[0][1]})")
-        print(f"Category: {data[0][2]}")
-        print(f"Quantity: {data[0][3]}")
-        print(f"Purchase Price: {data[0][4]}")
-        print(f"Selling Price: {data[0][5]}")
-        print(f"Supplier: {data[0][6]}")
+        print(f"\nProduct details")
+        print(tabulate([self.db.get_product_by_id(pid)], headers=["ID","Name","Category","Qty","Purchase","Selling","Supplier"], tablefmt="grid"))
 
         product = self.db.get_product_by_id(pid)
         
@@ -41,11 +39,10 @@ class DeleteProduct:
             print("Product not found")
             return
 
-        confirm = input("Delete product? (yes/no): ")
+        option = input("Delete product? (y/n): ")
 
-        if confirm == "yes":
-            try:
-                self.db.delete_product(pid)
-                print("Product deleted")
-            except Exception as e:
-                print(f"Error deleting product: {e}")
+        if option.lower() == 'y':
+            self.db.delete_product_db(pid)
+        else:
+            print("❌ Deletion cancelled")
+        

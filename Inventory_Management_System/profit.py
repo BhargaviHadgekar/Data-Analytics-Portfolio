@@ -16,11 +16,15 @@ class ProfitMenu:
 
         if choice=="1":
             data=self.reports.daily_profit()
+            print(tabulate(data, headers=["ID","Name","Category","Qty","Purchase","Selling","Profit/Unit","Qty Sold","Total Profit","Supplier"], tablefmt="grid"      ))
+            print("✅ Daily profit calculated")
 
         elif choice=="2":
             data=self.reports.weekly_profit()
+            print(tabulate(data, headers=["ID","Name","Category","Qty","Purchase","Selling","Profit/Unit","Qty Sold","Total Profit","Supplier"], tablefmt="grid"      ))
+            print("✅ Weekly profit calculated")
 
         elif choice=="3":
             data=self.reports.monthly_profit()
-
-        print(tabulate(data))
+            print(tabulate(data, headers=["ID","Name","Category","Qty","Purchase","Selling","Profit/Unit","Qty Sold","Total Profit","Supplier"], tablefmt="grid"      ))
+            print("✅ Monthly profit calculated")

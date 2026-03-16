@@ -1,19 +1,17 @@
 from datetime import datetime
 from connector import DBConnector
-from inventory import Inventory
 from tabulate import tabulate
 
 class Sales:
 
     def __init__(self):
         self.db = DBConnector()
-        self.inventory = Inventory()
 
     def add_sale(self):
 
         product_id = int(input("Enter Product ID: "))
 
-        product = self.inventory.get_product_by_id(product_id)
+        product = self.db.get_product_by_id(product_id)
 
         if not product:
             print("❌ Product not found")

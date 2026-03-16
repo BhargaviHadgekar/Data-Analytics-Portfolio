@@ -1,4 +1,5 @@
 from connector import DBConnector
+from tabulate import tabulate
 
 class Reports:
 
@@ -22,6 +23,7 @@ class Reports:
         """
 
         return self.db.fetch_query(query)
+        
 
     def weekly_profit(self):
 
@@ -40,6 +42,7 @@ class Reports:
         """
 
         return self.db.fetch_query(query)
+        print(tabulate(self.db.fetch_query(query), headers=["ID","Name","Category","Qty","Purchase","Selling","Profit/Unit","Qty Sold","Total Profit","Supplier"], tablefmt="grid"      ))  
 
     def monthly_profit(self):
 
@@ -58,3 +61,4 @@ class Reports:
         """
 
         return self.db.fetch_query(query)
+        print(tabulate(self.db.fetch_query(query), headers=["ID","Name","Category","Qty","Purchase","Selling","Profit/Unit","Qty Sold","Total Profit","Supplier"], tablefmt="grid"      ))

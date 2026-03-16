@@ -1,7 +1,6 @@
 import unittest
 
 from connector import DBConnector
-from inventory import Inventory
 from reports import Reports
 from sales import Sales
 
@@ -14,7 +13,6 @@ class TestInventory(unittest.TestCase):
         Creates class objects used in tests.
         """
         self.db = DBConnector()
-        self.inventory = Inventory()
         self.reports = Reports()
         self.sales = Sales()
 
@@ -30,7 +28,7 @@ class TestInventory(unittest.TestCase):
     # Test viewing products by category
     def test_view_category(self):
 
-        data = self.inventory.view_by_category("Electronics")
+        data = self.db.view_by_category("Electronics")
 
         self.assertIsInstance(data, list)
 
