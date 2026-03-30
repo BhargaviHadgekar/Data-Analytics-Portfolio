@@ -21,4 +21,6 @@ RUN pip install --upgrade pip
 RUN if [ -f "requirements.txt" ]; then pip install -r requirements.txt; fi
 
 # Default command
-CMD ["python", "-m", "unittest", "discover", "-s", "./Student_Database_System", "-p", "test_student_grade.py"]
+#CMD ["python", "-m", "unittest", "discover", "-s", "./Student_Database_System", "-p", "test_student_grade.py"]
+
+CMD [ "Python", "-m", "unittest", "discover", "-s", "./Student_system", "-p", "test_Student.py" ]
