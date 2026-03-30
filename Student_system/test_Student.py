@@ -1,5 +1,5 @@
 import unittest
-from Student_Grades_system import GradeSystem
+from Student_system.Student_Grades_system import GradeSystem
 class TestGradeSystem(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
