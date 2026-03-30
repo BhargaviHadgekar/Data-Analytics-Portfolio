@@ -69,22 +69,26 @@ class GradeSystem:
         self.conn.commit()
         print("Grade updated successfully!")
 
-grade_system = GradeSystem()
+if __name__ == "__main__":
+    grade_system = GradeSystem()
+    while True:
+        print("\nStudent Grades Management System")
+        print("1. View Students")
+        print("2. Add Student")
+        print("3. Delete Student")
+        print("4. Update Student Grades")
+        print("5. Exit")
 
-print("Welcome to the Student Grade System!")
-print("1. View Students")
-print("2. Add Student")
-print("3. Update Student Grades")
-print("4. Delete Student")
-choice = input("Enter your choice (1-4): ")
-
-if choice == "1":
-    grade_system.view_Students()
-elif choice == "2":
-    grade_system.add_Student()
-elif choice == "3":
-    grade_system.update_student_Grades()
-elif choice == "4": 
-    grade_system.delete_Student()
-else:
-    print("Invalid choice! Please enter a number between 1 and 4.")
+        choice = input("Enter your choice: ")
+        if choice == '1':
+            grade_system.view_Students()
+        elif choice == '2':
+            grade_system.add_Student()
+        elif choice == '3':
+            grade_system.delete_Student()
+        elif choice == '4':
+            grade_system.update_student_Grades()
+        elif choice == '5':
+            break
+        else:
+            print("Invalid choice! Please try again.")
