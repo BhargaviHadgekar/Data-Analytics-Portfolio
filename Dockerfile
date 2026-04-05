@@ -6,4 +6,7 @@ COPY . /app
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["python", "-m", "unittest", "discover", "-s", "./Student_system", "-p", "test_Student.py"]
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
+CMD ["/start.sh"]
