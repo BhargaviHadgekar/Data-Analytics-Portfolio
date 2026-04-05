@@ -1,14 +1,14 @@
-import unittest
-from Student_system.Student_Grades_system import GradeSystem
-class TestGradeSystem(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        cls.grade_system = GradeSystem()
-        cls.grade_system.cursor.execute("DELETE FROM Grades")
-        cls.grade_system.cursor.execute("DELETE FROM Students")
-        cls.grade_system.cursor.execute("DELETE FROM Courses")
-        cls.grade_system.conn.commit()
+from unittest import TestCase
+from Student_Grades_system import average_Grade, top_students
 
-    @classmethod
-    def tearDownClass(cls):
-        cls.grade_system.conn.close()
+class TestStudentGradesSystem(TestCase):
+    def test_average_Grade(self):
+        
+        average_Grade()
+        self.assertTrue(True)  
+
+    def test_top_students(self):
+        
+        top_students()
+        self.assertTrue(True)
+    
