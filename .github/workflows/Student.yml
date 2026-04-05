@@ -55,9 +55,14 @@ jobs:
         run: |
           docker push 597601766213.dkr.ecr.eu-north-1.amazonaws.com/student-grades:latest
   
+      - name: Create SSH key
+        run: |
+          echo "${{ secrets.EC2_KEY }}" > student-key.pem
+          chmod 400 student-key.pem
+
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no -i "STUDENT-KEY" ubuntu@16.170.221.183 "
+          ssh -o StrictHostKeyChecking=no -i "student-key.pem" ubuntu@16.170.221.183 "
             docker pull 597601766213.dkr.ecr.eu-north-1.amazonaws.com/student-grades:latest &&
             docker stop student-grades || true &&
             docker rm student-grades || true &&
