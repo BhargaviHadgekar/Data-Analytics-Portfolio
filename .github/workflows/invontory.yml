@@ -58,7 +58,7 @@ jobs:
   
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no -i "student-key.pem" ubuntu@16.170.221.183 "
+          ssh -o StrictHostKeyChecking=no -i "STUDENT_KEY" ubuntu@16.170.221.183 "
             docker pull 597601766213.dkr.ecr.eu-north-1.amazonaws.com/student-grades:latest &&
             docker stop student-grades || true &&
             docker rm student-grades || true &&
