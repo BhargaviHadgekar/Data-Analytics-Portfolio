@@ -1,0 +1,65 @@
+name: Student Grade System
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy :
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f "requirements.txt" ]; then pip install -r requirements.txt; else echo "No requirements.txt found"; fi
+
+      - name: Run tests
+        run: |
+          python -m unittest discover -s "./Student_system" -p "test_Student.py"
+
+      - name: checkout repo
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-north-1
+      
+      - name: Log in to ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+  
+      - name: Build Docker image
+        run: |
+          docker build -t student-grades .
+  
+      - name: Tag Docker image
+        run: |
+          docker tag student-grades:latest 597601766213.dkr.ecr.eu-north-1.amazonaws.com/student-grades:latest
+      
+      - name: Push Docker image to ECR
+        run: |
+          docker push 597601766213.dkr.ecr.eu-north-1.amazonaws.com/student-grades:latest
+  
+      - name: Deploy to EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no -i "STUDENT-KEY" ubuntu@16.170.221.183 "
+            docker pull 597601766213.dkr.ecr.eu-north-1.amazonaws.com/student-grades:latest &&
+            docker stop student-grades || true &&
+            docker rm student-grades || true &&
+            docker run -d --name student-grades 597601766213.dkr.ecr.eu-north-1.amazonaws.com/student-grades:latest
+          "
