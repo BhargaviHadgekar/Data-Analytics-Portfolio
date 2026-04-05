@@ -3,15 +3,18 @@ from tabulate import tabulate
 
 
 
-conn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};'
-            'SERVER=localhost\\SQLEXPRESS;'
-            'DATABASE=StudentGrades;'
-            'Trusted_Connection=yes;')
-cursor = conn.cursor()
+def get_connection():
+    return pyodbc.connect(
+        'DRIVER={ODBC Driver 17 for SQL Server};'
+        'SERVER=localhost;DATABASE=StudentGrades;Trusted_Connection=yes;'
+    )
 
 
 def view_Students():
         
+        conn = get_connection()
+        cursor = conn.cursor()
+
         cursor.execute("SELECT s.student_id, s.name,s.email,c.course_name, g.grade FROM Students as s JOIN Grades as g On s.student_id = g.student_id JOIN Courses as c ON g.course_id = c.course_id")
 
         students = cursor.fetchall()
@@ -21,6 +24,9 @@ def view_Students():
 
 
 def add_Student():
+
+    conn = get_connection()
+    cursor = conn.cursor()
 
     name = input("Enter student name: ")
     email = input("Enter student email: ")
@@ -63,6 +69,9 @@ def add_Student():
 
 def delete_Student():
 
+    conn = get_connection()
+    cursor = conn.cursor()
+
     student_id = int(input("Enter student ID to delete: "))
     cursor.execute("DELETE FROM Grades WHERE student_id=?", 
     (student_id,))
@@ -75,6 +84,9 @@ def delete_Student():
 
 
 def update_student_Grades():
+
+    conn = get_connection()
+    cursor = conn.cursor()
 
     student_id = int(input("Enter student ID to update: "))
     course = input("Enter course name: ")
@@ -95,12 +107,18 @@ def update_student_Grades():
 
 def average_Grade():
 
+    conn = get_connection()
+    cursor = conn.cursor()
+
     cursor.execute("SELECT c.course_name, AVG(g.grade) FROM Grades g JOIN Courses c ON g.course_id = c.course_id GROUP BY c.course_name")
     averages = cursor.fetchall()
-    
+
     print(tabulate(averages, headers=["Course", "Average Grade"], tablefmt="grid"))
 
 def top_students():
+
+    conn = get_connection()
+    cursor = conn.cursor()
 
     cursor.execute("SELECT TOP 5 s.name, c.course_name, g.grade FROM Grades g JOIN Students s ON g.student_id = s.student_id JOIN Courses c ON g.course_id = c.course_id ORDER BY g.grade DESC ")
 
