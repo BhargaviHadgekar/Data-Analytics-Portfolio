@@ -50,17 +50,17 @@ jobs:
   
       - name: Tag Docker image
         run: |
-          ddocker tag student-grades:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.eu-north-1.amazonaws.com/student-grades:latest
+          docker tag student-grades:latest 597601766213.dkr.ecr.eu-north-1.amazonaws.com/student-grades:latest
   
       - name: Push Docker image to ECR
         run: |
-          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.eu-north-1.amazonaws.com/student-grades:latest
+          docker push 597601766213.dkr.ecr.eu-north-1.amazonaws.com/student-grades:latest
   
       - name: Deploy to EC2
         run: |
           ssh -o StrictHostKeyChecking=no -i "student-key.pem" ubuntu@16.170.221.183 "
-            docker pull ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.eu-north-1.amazonaws.com/student-grades:latest &&
+            docker pull 597601766213.dkr.ecr.eu-north-1.amazonaws.com/student-grades:latest &&
             docker stop student-grades || true &&
             docker rm student-grades || true &&
-            docker run -d --name student-grades ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.eu-north-1.amazonaws.com/student-grades:latest
+            docker run -d --name student-grades 597601766213.dkr.ecr.eu-north-1.amazonaws.com/student-grades:latest
           "
