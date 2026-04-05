@@ -56,11 +56,7 @@ jobs:
         run: |
           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/student-grades:latest
   
-      - name: Deploy to EC2
+      - name: Deploy to AWS ECS
         run: |
-          ssh -o StrictHostKeyChecking=no -i "student-key.pem" ubuntu@16.170.221.183 "
-            docker pull ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/student-grades:latest &&
-            docker stop student-grades || true &&
-            docker rm student-grades || true &&
-            docker run -d --name student-grades ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/student-grades:latest
-          "
+          aws ecs update-service --cluster inventory-cluster --service inventory-service --force-new-deployment
+      

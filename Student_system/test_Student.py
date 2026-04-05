@@ -1,4 +1,5 @@
 from unittest import TestCase
+import unittest
 from Student_Grades_system import average_Grade, top_students
 
 class TestStudentGradesSystem(TestCase):
@@ -11,4 +12,7 @@ class TestStudentGradesSystem(TestCase):
         
         top_students()
         self.assertTrue(True)
+
+if __name__ == "__main__":
+    unittest.main()
     
