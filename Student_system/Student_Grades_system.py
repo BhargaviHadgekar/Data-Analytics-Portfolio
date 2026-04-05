@@ -158,30 +158,33 @@ if __name__ == "__main__":
         else:
             print("Invalid choice! Please try again.")  
 
-while True:
-        print("\nStudent Grades Management System")
-        print("1. View Students")
-        print("2. Add Student")
-        print("3. Delete Student")
-        print("4. Update Student Grades")
-        print("5. View Average Grades")
-        print("6. View Top Students")
-        print("7. Exit")
-        choice = input("Enter your choice: ")
-        if choice == '1':
-              view_Students()
-        elif choice == '2':
-            add_Student()
-        elif choice == '3':
-            delete_Student()
-        elif choice == '4':
-            update_student_Grades()
-        elif choice == '5':
-            average_Grade()
-        elif choice == '6':
-            top_students()
-        elif choice == '7':
-            break
-        else:
-            print("Invalid choice! Please try again.")  
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+print("Welcome to the Student Grades Management System")
