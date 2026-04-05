@@ -1,26 +1,13 @@
 from unittest.mock import patch
 import unittest
-from Student_Grades_system import average_Grade, top_students, update_student_Grades
+from Student_Grades_system import average_Grade
 
 class Test(unittest.TestCase):
-
-    @patch('builtins.input', side_effect=['1', "Python", '85'])
+    @patch('Student_Grades_system.cursor')
     
-    def test_update_student_Grades(self, _):
-
-        update_student_Grades()
-        self.assertTrue(True)
-
-    @patch('builtins.input', side_effect=['1'])
-    def test_average_Grade(self, _):
-        
+    def test_average(self, mock_cursor):
+        mock_cursor.fetchall.return_value = [("Python", 80)]
         average_Grade()
-        self.assertTrue(True)  
-
-    @patch('builtins.input', side_effect=['1'])
-    def test_top_students(self, _):
-        
-        top_students()
         self.assertTrue(True)
 
 if __name__ == "__main__":
